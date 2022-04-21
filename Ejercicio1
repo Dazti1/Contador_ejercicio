@@ -1,0 +1,84 @@
+Agua = 600
+Azucar = 1200
+Aceite = 1500
+Arroz = 1250
+Fideos = 790
+Bebida = 1780
+Chocolate = 2500
+Pan_molde = 1340
+c_agua = 0
+c_azucar = 0
+c_aceite = 0
+c_arroz = 0
+c_fideos = 0
+c_bebida = 0
+c_chocolate = 0
+c_pan_molde = 0
+total = 0
+efectivo = 0
+
+print("Bienvenido a Python Store")
+confirmacion=input("¿Desea llevar agua? S/N ")
+if confirmacion=="S":
+    c_agua=int(input("¿Cúanta agua desea llevar? "))
+    total = total+(c_agua*Agua)
+
+confirmacion=input("¿Desea llevar azúcar? S/N ")
+if confirmacion=="S":
+    c_azucar=int(input("¿Cúanta azúcar desea llevar? "))
+    total = total+(c_azucar*Azucar)
+
+confirmacion=input("¿Desea llevar aceite? S/N ")
+if confirmacion=="S":
+    c_aceite=int(input("¿Cúanta aceite desea llevar? "))
+    total = total+(c_aceite*Aceite)
+
+confirmacion=input("¿Desea llevar arroz? S/N ")
+if confirmacion=="S":
+    c_arroz=int(input("¿Cúanta arroz desea llevar? "))
+    total = total+(c_arroz*Arroz)
+
+confirmacion=input("¿Desea llevar fideos? S/N ")
+if confirmacion=="S":
+    c_fideos=int(input("¿Cúanta fideos desea llevar? "))
+    total = total+(c_fideos*Fideos)
+    
+confirmacion=input("¿Desea llevar bebida? S/N ")
+if confirmacion=="S":
+    c_bebida=int(input("¿Cúantas bebidas desea llevar? "))
+    total = total+(c_bebida*Bebida)
+
+confirmacion=input("¿Desea llevar chocolate? S/N ")
+if confirmacion=="S":
+    c_chocolate=int(input("¿Cúantos chocolates desea llevar? "))
+    total = total+(c_chocolate*Chocolate)
+    
+confirmacion=input("¿Desea llevar pan de molde? S/N ")
+if confirmacion=="S":
+    c_pan_molde=int(input("¿Cúanto pan de molde desea llevar? "))
+    total = total+(c_pan_molde*Pan_molde)
+    
+pref=input("¿Tiene su tarjeta de cliente preferencial? ")
+if pref=="si":
+    total=total-(total*0.25)
+
+print(f"""Usted lleva:
+{c_agua} de agua
+{c_azucar} de azúcar
+{c_aceite} aceite(s)
+{c_arroz} de arroz
+{c_fideos} de fideos
+{c_bebida} bebida(s)
+{c_chocolate} chocolate(s)
+{c_pan_molde} pan de molde
+por un total de ${total}""")
+
+efectivo=int(input("¿Con cúanto va a pagar? "))
+
+if efectivo>total:
+    vuelto = efectivo-total
+    print(f"Su cambio es de {vuelto}, gracias por su compra.")
+elif efectivo==total:
+    print("Gracias por su compra.")
+else:
+    print("No es suficiente dinero, ¡Guardias!")
